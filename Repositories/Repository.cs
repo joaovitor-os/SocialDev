@@ -13,7 +13,7 @@ namespace DbRespositorie
         // Initializando DbContextOptions
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseMySql("Server=localhost;User Id=root;Database=embutidos");
+            options.UseMySql("Server=localhost;User Id=root;Database=socialdev");
         }
     }
 }

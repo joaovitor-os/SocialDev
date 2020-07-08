@@ -3,7 +3,7 @@ using Models;
 using Controllers;
 using System.Windows.Forms;
 
-namespace SistemaFilipini
+namespace View
 {
     public partial class ListaUsuario : Form
     {
@@ -14,22 +14,21 @@ namespace SistemaFilipini
 
         // CRUD
         // Consulta Usuário na Lista
-        private void btn_ListaClick(object sender, EventArgs e)
+        private void btn_ListaConsultaClick(object sender, EventArgs e)
         {
             try
             {
                 int IdUsuario = Int32.Parse(this.lv_ListaUsuarios.SelectedItems[0].Text);
                 Usuario usuario = UsuarioController.GetUsuario(IdUsuario);
                 MessageBox.Show(
-                $"---[ Dados do Usuário ]---------------------------\n" +
+                $"---[ Usuário ]---------------------------\n" +
                 $"Nome: {usuario.NomeUsuario}\n" +
+                $"Login: {usuario.LoginUsuario}\n" +
+                $"Senha: {usuario.SenhaUsuario}\n" +
                 $"Email: {usuario.EmailUsuario}\n" +
                 $"Descrição: {usuario.DescricaoUsuario}\n" +
-                $"Nascimento: {usuario.NascimentoUsuario}\n" +
-                $"Estado: {usuario.EstadoUsuario}\n" +
                 $"Cidade: {usuario.CidadeUsuario}\n" +
                 $"-------------------------------------------------------\n",
-                "Consulta Cliente",
                 MessageBoxButtons.OK
                 );
             }
@@ -45,7 +44,7 @@ namespace SistemaFilipini
             try
             {
                 int IdUsuario = Int32.Parse(this.lv_ListaUsuarios.SelectedItems[0].Text);
-                CadastrarUsuario btn_UpdateUsuarioClick = new CadastrarUsuario(this, IdUsuario);
+                CadastroLogin btn_UpdateUsuarioClick = new CadastroLogin(this, IdUsuario);
                 btn_UpdateUsuarioClick.Show();
             }
             catch
@@ -60,7 +59,7 @@ namespace SistemaFilipini
             try
             {
                 int IdUsuario = Int32.Parse(this.lv_ListaUsuarios.SelectedItems[0].Text);
-                DialogResult result = MessageBox.Show("Deseja Exluir Esse Usuário?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                DialogResult result = MessageBox.Show("Deseja Exluir Esse Usuário?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (result == DialogResult.Yes)
                 {
                     try

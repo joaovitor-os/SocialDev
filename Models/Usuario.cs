@@ -13,24 +13,24 @@ namespace Models
         [Required] // Propriedades requeridas na classe
         public string NomeUsuario { get; set; }
         [Required]
+        public string LoginUsuario { get; set; }
+        [Required]
+        public string SenhaUsuario { get; set; }
+        [Required]
         public string EmailUsuario { get; set; }
         [Required]
         public string DescricaoUsuario { get; set; }
         [Required]
-        public string NascimentoUsuario { get; set; }
-        [Required]
-        public string EstadoUsuario { get; set; }
-        [Required]
         public string CidadeUsuario { get; set; }
 
-        // Construtor do objeto UsuarioModels
-        public Usuario(string nomeUsuario, string emailUsuario, string descricaoUsuario, string nascimentoUsuario, string estadoUsuario, string cidadeUsuario)
+        // Construtor do objeto Usuario
+        public Usuario(string nomeUsuario, string loginUsuario, string senhaUsuario, string emailUsuario, string descricaoUsuario, string cidadeUsuario)
         {
             NomeUsuario = nomeUsuario;
+            LoginUsuario = loginUsuario;
+            SenhaUsuario = senhaUsuario;
             EmailUsuario = emailUsuario;
             DescricaoUsuario = descricaoUsuario;
-            NascimentoUsuario = nascimentoUsuario;
-            EstadoUsuario = estadoUsuario;
             CidadeUsuario = cidadeUsuario;
 
             var db = new Context();
@@ -65,10 +65,10 @@ namespace Models
         public static void AlterarUsuario(
             int IdUsuario,
             string nomeUsuario,
+            string loginUsuario,
+            string senhaUsuario,
             string emailUsuario,
             string descricaoUsuario,
-            string nascimentoUsuario,
-            string estadoUsuario,
             string cidadeUsuario
         )
         {
@@ -77,10 +77,10 @@ namespace Models
             {
                 Usuario usuario = db.Usuarios.First(usuario => usuario.IdUsuario == IdUsuario);
                 usuario.NomeUsuario = nomeUsuario;
+                usuario.LoginUsuario = loginUsuario;
+                usuario.SenhaUsuario = senhaUsuario;
                 usuario.EmailUsuario = emailUsuario;
                 usuario.DescricaoUsuario = descricaoUsuario;
-                usuario.NascimentoUsuario = nascimentoUsuario;
-                usuario.EstadoUsuario = estadoUsuario;
                 usuario.CidadeUsuario = cidadeUsuario;
                 db.SaveChanges(); // Cria a transação do BD
             }
