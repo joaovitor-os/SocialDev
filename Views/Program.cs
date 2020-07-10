@@ -34,15 +34,11 @@ namespace View
             // public bool logado = false;
             // public static string usuarioConectado;
             Library.PictureBox pb_Imagem;
-
             Library.GroupBox lbl_DadosUsuario;
-
             Library.Label lbl_Usuario;
             Library.Label lbl_SenhaUsuario;
-
             Library.TextBox txt_Usuario;
-            Library.TextBox txt_SenhaUsuario;
-            
+            Library.TextBox txt_SenhaUsuario; 
             Library.Button btn_Proximo;
             Library.Button btn_Sair;
 
