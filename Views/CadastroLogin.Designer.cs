@@ -11,7 +11,6 @@ namespace View
         Library.Label lbl_NomeUsuario;
         Library.Label lbl_Usuario;
         Library.Label lbl_SenhaUsuario;
-        Library.Label lbl_ConfirmaSenha;
         Library.Label lbl_EmailUsuario;
         Library.Label lbl_DescricaoUsuario;
         Library.Label lbl_CidadeUsuario;
@@ -19,7 +18,6 @@ namespace View
         Library.TextBox txt_NomeUsuario;
         Library.TextBox txt_Usuario;
         Library.TextBox txt_SenhaUsuario;
-        Library.TextBox txt_ConfirmarSenha;
         Library.TextBox txt_EmailUsuario;
         Library.TextBox txt_DescricaoUsuario;
         Library.TextBox txt_CidadeUsuario;
@@ -76,15 +74,6 @@ namespace View
             this.txt_SenhaUsuario = new Library.TextBox();
             this.txt_SenhaUsuario.Location = new Point(150, 80);
             this.Controls.Add(txt_SenhaUsuario);
-
-            this.lbl_ConfirmaSenha = new Library.Label();
-            this.lbl_ConfirmaSenha.Text = "Confirmar Senha :";
-            this.lbl_ConfirmaSenha.Location = new Point(20, 110);
-            this.Controls.Add(lbl_ConfirmaSenha);
-
-            this.txt_ConfirmarSenha = new Library.TextBox();
-            this.txt_ConfirmarSenha.Location = new Point(150, 110);
-            this.Controls.Add(txt_ConfirmarSenha);
 
             this.lbl_EmailUsuario = new Library.Label();
             this.lbl_EmailUsuario.Text = "Email :";

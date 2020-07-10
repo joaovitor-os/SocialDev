@@ -20,7 +20,7 @@ namespace View
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 // Abro o formulário principal
-                Application.Run(new TelaPrincipal());
+                Application.Run(new Menu());
             }
             else
             {
@@ -115,10 +115,10 @@ namespace View
             }
 
             //Método de validação do Usuário (2 strings - Login e Senha)
-            private bool ValidaUsuario(string UsuarioLogin, string Senha)
+            private bool ValidaUsuario(string LoginUsuario, string SenhaUsuario)
             {
                 // Acesso ao método Campos Preenchidos Obrigatorio
-                bool resultado = Controllers.LoginController.CamposPreenchidosLogin(LoginUsuario, SenhaUsuario);
+                bool resultado = Controllers.UsuarioController.CampoLogin(LoginUsuario, SenhaUsuario);
                 if (resultado)
                 {
                     // Variável para teste de retorno

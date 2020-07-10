@@ -47,7 +47,7 @@ namespace Controllers
             string cidadeUsuario
             )
         {
-            UsuarioModels.AlterarUsuario(
+            Usuario.AlterarUsuario(
             idUsuario,
             nomeUsuario,
             loginUsuario,
@@ -64,19 +64,7 @@ namespace Controllers
             Usuario.DeletarUsuario(idUsuario);
         }
 
-        public static bool ConfirmarSenhasIguais(string senha1, string senha2)
-        {
-            if (senha1 == senha2)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static bool CamposPreenchidosCadastroUsuario(
+        public static bool CampoCadastroUsuario(
             string nomeUsuario,
             string loginUsuario,
             string senhaUsuario,
@@ -87,7 +75,6 @@ namespace Controllers
             if ((nomeUsuario == string.Empty)
                 || (loginUsuario == string.Empty)
                 || (senhaUsuario == string.Empty)
-                || (confirmarSenha == string.Empty)
                 || (emailUsuario == string.Empty)
                 || (descricaoUsuario == string.Empty)
                 || (cidadeUsuario == string.Empty))
@@ -97,7 +84,7 @@ namespace Controllers
             return true;
         }
 
-        public static bool CamposPreenchidosLogin(string LoginUsuario, string SenhaUsuario)
+        public static bool CampoLogin(string LoginUsuario, string SenhaUsuario)
         {
             if (LoginUsuario == "" || SenhaUsuario == "")
             {

@@ -25,56 +25,43 @@ namespace View
         // Botão Confirma Cadastro ou Alteração do Usuário
         private void btn_ConfirmarClick(object sender, EventArgs e)
         {
-            try
-            {
-                if (Controllers.UsuarioController.CamposPreenchidosCadastroUsuario(txt_NomeUsuario.Text, txt_Usuario.Text, txt_SenhaUsuario.Text, txt_ConfirmarSenha.Text, txt_EmailUsuario.Text, txt_DescricaoUsuario.Text, txt_CidadeUsuario.Text))
+            try{
+                if (Controllers.UsuarioController.CampoCadastroUsuario(txt_NomeUsuario.Text, txt_Usuario.Text, txt_SenhaUsuario.Text, txt_ConfirmarSenha.Text, txt_EmailUsuario.Text, txt_DescricaoUsuario.Text, txt_CidadeUsuario.Text))
                 {
-                    if (Controllers.UsuarioController.ConfirmarSenhasIguais(txt_SenhaUsuario.Text, txt_ConfirmarSenha.Text))
-                    {
-                        if (usuario == null)
-                        {
-                            UsuarioController.CadastrarUsuario(
-                            txt_NomeUsuario.Text,
-                            txt_Usuario.Text,
-                            txt_SenhaUsuario.Text,
-                            txt_EmailUsuario.Text,
-                            txt_DescricaoUsuario.Text,
-                            txt_CidadeUsuario.Text == "Usuário"
-                            );
-                            MessageBox.Show("Cadastrado Com Sucesso!");
-                        }
-                        else
-                        {
-                            UsuarioController.AlterarUsuario(
-                            usuario.IdUsuario,
-                            txt_NomeUsuario.Text,
-                            txt_Usuario.Text,
-                            txt_SenhaUsuario.Text,
-                            txt_EmailUsuario.Text,
-                            txt_DescricaoUsuario.Text,
-                            txt_CidadeUsuario.Text == "Usuário"
-                           );
-                            MessageBox.Show("Alterado Com Sucesso!");
 
-                        }
-                        this.Close();
-                        this.parent.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("As Senhas São Diferentes!");
-                    }
+                    UsuarioController.CadastrarUsuario(
+                    txt_NomeUsuario.Text,
+                    txt_Usuario.Text,
+                    txt_SenhaUsuario.Text,
+                    txt_EmailUsuario.Text,
+                    txt_DescricaoUsuario.Text,
+                    txt_CidadeUsuario.Text
+                    );
+                    MessageBox.Show("Cadastrado Com Sucesso!");
                 }
                 else
                 {
-                    MessageBox.Show("Preencha Todos Os Campos!");
+                    UsuarioController.AlterarUsuario(
+                    usuario.IdUsuario,
+                    txt_NomeUsuario.Text,
+                    txt_Usuario.Text,
+                    txt_SenhaUsuario.Text,
+                    txt_EmailUsuario.Text,
+                    txt_DescricaoUsuario.Text,
+                    txt_CidadeUsuario.Text
+                    );
+                    MessageBox.Show("Alterado Com Sucesso!");
+
                 }
+                this.Close();
+                this.parent.Show();
+
             }
             catch (Exception er)
             {
-                MessageBox.Show(er.Message, "Preencha Todos Os Campos!");
+                MessageBox.Show(er.Message, "Preencha todos os campos!");
             }
-        }
+
 
         // Botão Cancelar Cadastro
         private void btn_CancelarClick(object sender, EventArgs e)
@@ -85,12 +72,12 @@ namespace View
         // Método para preencher campos para alteração
         private void LoadForm(object sender, EventArgs e)
         {
-            this.txt_NomeUsuario.Text = usuario.txt_NomeUsuario;
-            this.txt_Usuario.Text = usuario.LoginUsuario;
-            this.txt_SenhaUsuario.Text = usuario.SenhaUsuario;
-            this.txt_EmailUsuario.Text = usuario.EmailUsuario;
-            this.txt_DescricaoUsuario.Text = usuario.DescricaoUsuario;
-            this.txt_CidadeUsuario.Text = usuario.CidadeUsuario;
+        this.txt_NomeUsuario.Text = usuario.NomeUsuario;
+        this.txt_Usuario.Text = usuario.LoginUsuario;
+        this.txt_SenhaUsuario.Text = usuario.SenhaUsuario;
+        this.txt_EmailUsuario.Text = usuario.EmailUsuario;
+        this.txt_DescricaoUsuario.Text = usuario.DescricaoUsuario;
+        this.txt_CidadeUsuario.Text = usuario.CidadeUsuario;
         }
     }
 }

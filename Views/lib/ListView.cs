@@ -1,6 +1,5 @@
 using System.Drawing;
 using System.Windows.Forms;
-using System.Windows.Forms.View;
 
 namespace Library
 {
@@ -9,7 +8,6 @@ namespace Library
 
         public ListView()
         {
-            this.View = Details;
             this.FullRowSelect = true;
             this.GridLines = true;
             this.AllowColumnReorder = true;
