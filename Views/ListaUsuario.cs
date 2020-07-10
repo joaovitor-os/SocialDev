@@ -12,13 +12,13 @@ namespace FrontEndHotel
 {
     public partial class ListaUsuario : Form
     {
-        public ListaUsuario()
+        public ListaUsuario(Form parent)
         {
-            InitializeComponent();
+            InitializeComponent(parent);
         }
         private void btnEnviarEmail_Click(object sender, EventArgs e)
         {
-            EnviarEmail enviarEmail = new EnviarEmail(this);
+            EnviarEmail enviarEmail = new EnviarEmail();
             enviarEmail.ShowDialog();
         }
         public void btnVoltarClick(object sender, EventArgs e)

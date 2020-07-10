@@ -105,6 +105,6 @@ namespace FrontEndHotel
             this.btnVoltar.Click += new EventHandler(this.btnVoltarClick);
             this.Controls.Add(btnVoltar);
         }
-        #endregion
+        
     }
 }

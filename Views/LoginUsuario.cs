@@ -27,12 +27,14 @@ namespace FrontEndHotel
         
         public void btnListarUsuarioClick(object sender, EventArgs e)
         {
-            ListaUsuario ListarUsuario = new ListaUsuario();
+            this.Hide();
+            ListaUsuario ListarUsuario = new ListaUsuario(this);
             ListarUsuario.Show();
         }
 
         public void btnCadastrarClick(object sender, EventArgs e)
         {
+            this.Hide();
             CadastroUsuario CadastrarUsuario = new CadastroUsuario();
             CadastrarUsuario.Show();
         }

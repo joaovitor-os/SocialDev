@@ -12,16 +12,15 @@ namespace FrontEndHotel
 {
     public partial class EnviarEmail : Form
     {
-        public EnviarEmail(Form parent)
+        public EnviarEmail()
         {
-            InitializeComponent(parent);
+            InitializeComponent();
         }
         public void btnEnviarClick(object sender, EventArgs e){
             MessageBox.Show("Enviado");
         }
         public void btnVoltarClick(object sender, EventArgs e){
             this.Close();
-            this.parent.Show();
         }
     }
 }
