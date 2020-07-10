@@ -32,7 +32,7 @@ namespace FrontEndHotel
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 400);
+            this.ClientSize = new System.Drawing.Size(310, 400);
             this.Text = "Listar Usuario";
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = ColorTranslator.FromHtml("#FFF0F8FF");
@@ -40,6 +40,7 @@ namespace FrontEndHotel
             
             this.pb_Detalhe = new Library.PictureBox();
             this.pb_Detalhe.Load("./Views/assets/image.png");
+            this.pb_Detalhe.Location = new Point(130, 20);
             this.Controls.Add(pb_Detalhe);
             
             this.btnEnviarEmail = new Library.Button();
@@ -58,7 +59,7 @@ namespace FrontEndHotel
 
             this.lvListaUsuario = new ListView();
             this.lvListaUsuario.Location = new Point(20, 80);
-            this.lvListaUsuario.Size = new Size(260, 250);
+            this.lvListaUsuario.Size = new Size(270, 250);
             ListViewItem usuarios = new ListViewItem();
 
             this.lvListaUsuario.MultiSelect = false;

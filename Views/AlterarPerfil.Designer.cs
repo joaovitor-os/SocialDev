@@ -4,17 +4,17 @@ using System.Windows.Forms;
 
 namespace FrontEndHotel
 {
-    partial class CadastroUsuario
+    partial class AlterarPerfil
     {
         private System.ComponentModel.IContainer components = null;
         private Library.PictureBox pb_Detalhe;
-
         private Library.Label lbNomeUsuario;
         private Library.Label lbUserUsuario;
         private Library.Label lbSenhaUsuario;
         private Library.Label lbEmailUsuario;
         private Library.Label lbDescricaoUsuario;
         private Library.Label lbCidadeUsuario;
+
 
         private Library.TextBox tbNomeUsuario;
         private Library.TextBox tbUserUsuario;
@@ -40,7 +40,7 @@ namespace FrontEndHotel
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 400);
-            this.Text = "Cadastrar Usuario";
+            this.Text = "Alterar Perfil";
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -71,7 +71,7 @@ namespace FrontEndHotel
             this.Controls.Add(tbUserUsuario);
 
             this.lbSenhaUsuario = new Library.Label();
-            this.lbSenhaUsuario.Text = "Senha: ";
+            this.lbSenhaUsuario.Text = "Senha:";
             this.lbSenhaUsuario.Location = new Point(20, 125);
             this.Controls.Add(lbSenhaUsuario);
 
@@ -80,7 +80,7 @@ namespace FrontEndHotel
             this.Controls.Add(tbSenhaUsuario);
 
             this.lbEmailUsuario = new Library.Label();
-            this.lbEmailUsuario.Text = "Email: ";
+            this.lbEmailUsuario.Text = "Email:";
             this.lbEmailUsuario.Location = new Point(20, 175);
             this.Controls.Add(lbEmailUsuario);
 
@@ -89,7 +89,7 @@ namespace FrontEndHotel
             this.Controls.Add(tbEmailUsuario);
 
             this.lbDescricaoUsuario = new Library.Label();
-            this.lbDescricaoUsuario.Text = "Descrição:";
+            this.lbDescricaoUsuario.Text = "Descricao:";
             this.lbDescricaoUsuario.Location = new Point(20, 225);
             this.Controls.Add(lbDescricaoUsuario);
 

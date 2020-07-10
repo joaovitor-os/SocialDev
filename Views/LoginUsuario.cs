@@ -22,7 +22,9 @@ namespace FrontEndHotel
         }
         public void btnLogarClick(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            PerfilUsuario PerfilUsuario = new PerfilUsuario();
+            PerfilUsuario.Show();
         }
         
         public void btnListarUsuarioClick(object sender, EventArgs e)

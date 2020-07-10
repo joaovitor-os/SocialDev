@@ -7,7 +7,7 @@ namespace Library
     {
         public Button()
         {   
-           this.Size = new Size (130,40);
+           this.Size = new Size (140,40);
         }
     }
 }

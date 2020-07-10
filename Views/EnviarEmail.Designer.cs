@@ -13,7 +13,7 @@ namespace FrontEndHotel
     partial class EnviarEmail
     {
         private System.ComponentModel.IContainer components = null;
-        private Library.PictureBox pb_Imagem;
+        private Library.PictureBox pb_Detalhe;
 
         private Library.Label lbEmailRemetente;
         private Library.Label lbEmailDestinatario;
@@ -49,9 +49,10 @@ namespace FrontEndHotel
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = ColorTranslator.FromHtml("#FFF0F8FF");
 
-            this.pb_Imagem = new Library.PictureBox();
-            this.pb_Imagem.Load("./Views/assets/image.png");
-            this.Controls.Add(pb_Imagem);
+            this.pb_Detalhe = new Library.PictureBox();
+            this.pb_Detalhe.Load("./Views/assets/image.png");
+            this.pb_Detalhe.Location = new Point(200, 20);
+            this.Controls.Add(pb_Detalhe);
 
             this.lbEmailRemetente = new Library.Label();
             this.lbEmailRemetente.Text = "De: ";
@@ -82,18 +83,18 @@ namespace FrontEndHotel
 
             this.lbEmailCampo = new Library.Label();
             this.lbEmailCampo.Text = "Campo: ";
-            this.lbEmailCampo.Location = new Point(20, 160);
+            this.lbEmailCampo.Location = new Point(20, 210);
             this.Controls.Add(lbEmailCampo);
 
             this.tbEmailCampo = new Library.TextBox();
-            this.tbEmailCampo.Location = new Point(20, 185);
+            this.tbEmailCampo.Location = new Point(20, 235);
             this.Controls.Add(tbEmailCampo);
 
             this.btnEnviar = new Button();
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.BackColor = ColorTranslator.FromHtml("#FF87CEFA");
             this.btnEnviar.Size = new Size(130, 40);
-            this.btnEnviar.Location = new Point(155, 50);
+            this.btnEnviar.Location = new Point(155, 350);
             this.btnEnviar.Click += new EventHandler(this.btnEnviarClick);
             this.Controls.Add(btnEnviar);
 
@@ -101,7 +102,7 @@ namespace FrontEndHotel
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.BackColor = ColorTranslator.FromHtml("#FF87CEFA");
             this.btnVoltar.Size = new Size(130, 40);
-            this.btnVoltar.Location = new Point(15, 50);
+            this.btnVoltar.Location = new Point(15, 350);
             this.btnVoltar.Click += new EventHandler(this.btnVoltarClick);
             this.Controls.Add(btnVoltar);
         }

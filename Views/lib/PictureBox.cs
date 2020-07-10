@@ -7,7 +7,6 @@ namespace Library
     {
         public PictureBox()
         {   
-            this.Location = new Point(125, 5);
             this.Size = new Size(60, 60);
             this.ClientSize = new Size(60, 60);
             //this.BackColor = ColorTranslator.FromHtml("#38323e");

@@ -7,7 +7,7 @@ namespace Library
     {
         public TextBox()
         {   
-           this.Size = new Size (260,40);
+           this.Size = new Size (140,40);
         }
     }
 }
