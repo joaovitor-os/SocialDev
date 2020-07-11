@@ -13,39 +13,31 @@ namespace Models
         [Required] // Propriedades requeridas na classe
         public string NomeUsuario { get; set; }
         [Required]
-        public string LoginUsuario { get; set; }
+        public string Email { get; set; }
         [Required]
         public string SenhaUsuario { get; set; }
         [Required]
-        public string EmailUsuario { get; set; }
+        public string Descricao { get; set; }
         [Required]
-        public string DescricaoUsuario { get; set; }
+        public string Github { get; set; }
         [Required]
-        public string CidadeUsuario { get; set; }
+        public string Linkedin { get; set; }
+        
 
-        // Construtor do objeto Usuario
-        public Usuario(string nomeUsuario, string loginUsuario, string senhaUsuario, string emailUsuario, string descricaoUsuario, string cidadeUsuario)
+        public Usuario(string nomeUsuario, string email, string senhaUsuario, string descricao, string github, string linkedin)
         {
             NomeUsuario = nomeUsuario;
-            LoginUsuario = loginUsuario;
+            Email = email;
             SenhaUsuario = senhaUsuario;
-            EmailUsuario = emailUsuario;
-            DescricaoUsuario = descricaoUsuario;
-            CidadeUsuario = cidadeUsuario;
+            Descricao = descricao;
+            Github = github;
+            Linkedin = linkedin;
 
-            var db = new Context();
+            Context db = new Context();
             db.Usuarios.Add(this);
             db.SaveChanges();
         }
-
-        // 2º Constructor do obejto UsuarioModels
-        // Usado pelo Entity Framework NÃO REMOVA!!!
-        public Usuario()
-        {
-
-        }
-
-        // Método para pegar o usuário pelo ID        
+        
         public static Usuario GetUsuario(int idUsuario)
         {
             var db = new Context();
@@ -53,23 +45,19 @@ namespace Models
                     where usuario.IdUsuario == idUsuario
                     select usuario).First();
         }
-
-        // Método para pegar a lista de usuários       
         public static List<Usuario> GetUsuarios()
         {
             var db = new Context();
             return db.Usuarios.ToList();
         }
-
-        // Método para alterar os dados do usuário       
-        public static void AlterarUsuario(
+            public static void AlterarUsuario(
             int IdUsuario,
             string nomeUsuario,
-            string loginUsuario,
+            string email,
             string senhaUsuario,
-            string emailUsuario,
-            string descricaoUsuario,
-            string cidadeUsuario
+            string descricao,
+            string github,
+            string linkedin
         )
         {
             Context db = new Context();
@@ -77,11 +65,11 @@ namespace Models
             {
                 Usuario usuario = db.Usuarios.First(usuario => usuario.IdUsuario == IdUsuario);
                 usuario.NomeUsuario = nomeUsuario;
-                usuario.LoginUsuario = loginUsuario;
+                usuario.Email = email;
                 usuario.SenhaUsuario = senhaUsuario;
-                usuario.EmailUsuario = emailUsuario;
-                usuario.DescricaoUsuario = descricaoUsuario;
-                usuario.CidadeUsuario = cidadeUsuario;
+                usuario.Descricao = descricao;
+                usuario.Github = github;
+                usuario.Linkedin = linkedin;
                 db.SaveChanges(); // Cria a transação do BD
             }
             catch
@@ -89,8 +77,6 @@ namespace Models
                 throw new ArgumentException();
             }
         }
-
-        // Método de deleção do usuário        
         public static void DeletarUsuario(int idUsuario)
         {
             Context db = new Context();
@@ -103,6 +89,21 @@ namespace Models
             catch
             {
                 throw new ArgumentException();
+            }
+        }
+        public static Usuario ValidaUsuario(string login, string senha)
+        {
+            try
+            {
+            Context db = new Context();
+            IEnumerable<Usuario> usuario = from Usuario in db.Usuarios
+                where Usuario.Email == login && Usuario.SenhaUsuario == senha
+                select Usuario;
+            return usuario.ToArray().First();
+            }
+            catch
+            {
+                throw new Exception("Usuário e/ou Senha Inválido!");
             }
         }
     }

@@ -8,24 +8,24 @@ namespace Controllers
         // Inserindo usuário no banco de dados
         public static void CadastrarUsuario(
             string nomeUsuario,
-            string loginUsuario,
+            string email,
             string senhaUsuario,
-            string emailUsuario,
-            string descricaoUsuario,
-            string cidadeUsuario
+            string descricao,
+            string github,
+            string linkedin
             )
         {
             new Usuario(
                 nomeUsuario,
-                loginUsuario,
+                email,
                 senhaUsuario,
-                emailUsuario,
-                descricaoUsuario,
-                cidadeUsuario);
+                descricao,
+                github,
+                linkedin);
         }
 
         // Acessando usuário no BD pelo ID
-        public static Usuario GetUsuario(int idUsuario)
+        public static Models.Usuario GetUsuario(int idUsuario)
         {
             return Usuario.GetUsuario(idUsuario);
         }
@@ -40,21 +40,21 @@ namespace Controllers
         public static void AlterarUsuario(
             int idUsuario,
             string nomeUsuario,
-            string loginUsuario,
+            string email,
             string senhaUsuario,
-            string emailUsuario,
-            string descricaoUsuario,
-            string cidadeUsuario
+            string descricao,
+            string github,
+            string linkedin
             )
         {
             Usuario.AlterarUsuario(
             idUsuario,
             nomeUsuario,
-            loginUsuario,
+            email,
             senhaUsuario,
-            emailUsuario,
-            descricaoUsuario,
-            cidadeUsuario
+            descricao,
+            github,
+            linkedin
             );
         }
 
@@ -64,29 +64,30 @@ namespace Controllers
             Usuario.DeletarUsuario(idUsuario);
         }
 
-        public static bool CampoCadastroUsuario(
-            string nomeUsuario,
-            string loginUsuario,
-            string senhaUsuario,
-            string emailUsuario,
-            string descricaoUsuario,
-            string cidadeUsuario)
+        public static bool ConfirmarSenhasIguais(string senha1, string senha2)
         {
-            if ((nomeUsuario == string.Empty)
-                || (loginUsuario == string.Empty)
-                || (senhaUsuario == string.Empty)
-                || (emailUsuario == string.Empty)
-                || (descricaoUsuario == string.Empty)
-                || (cidadeUsuario == string.Empty))
+            if (senha1 == senha2)
+            {
+                return true;
+            }
+            else
             {
                 return false;
             }
-            return true;
         }
 
-        public static bool CampoLogin(string LoginUsuario, string SenhaUsuario)
+        public static bool CamposPreenchidosCadastroUsuario(
+            string nomeCompleto,
+            string usuario,
+            string senha,
+            string confirmarSenha,
+            string descricao)
         {
-            if (LoginUsuario == "" || SenhaUsuario == "")
+            if ((nomeCompleto == string.Empty)
+                || (usuario == string.Empty)
+                || (senha == string.Empty)
+                || (confirmarSenha == string.Empty)
+                || (descricao == string.Empty))
             {
                 return false;
             }

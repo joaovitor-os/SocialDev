@@ -9,17 +9,15 @@ namespace View
         Library.PictureBox pb_Imagem;
 
         Library.Label lbl_NomeUsuario;
-        Library.Label lbl_Usuario;
+        Library.Label lbl_Email;
         Library.Label lbl_SenhaUsuario;
-        Library.Label lbl_EmailUsuario;
-        Library.Label lbl_DescricaoUsuario;
+        Library.Label lbl_Descricao;
         Library.Label lbl_CidadeUsuario;
 
         Library.TextBox txt_NomeUsuario;
-        Library.TextBox txt_Usuario;
+        Library.TextBox txt_Email;
         Library.TextBox txt_SenhaUsuario;
-        Library.TextBox txt_EmailUsuario;
-        Library.TextBox txt_DescricaoUsuario;
+        Library.TextBox txt_Descricao;
         Library.TextBox txt_CidadeUsuario;
 
         Library.Button btn_Confirmar;
@@ -57,14 +55,14 @@ namespace View
             this.txt_NomeUsuario.Location = new Point(150, 20);
             this.Controls.Add(txt_NomeUsuario);
 
-            this.lbl_Usuario = new Library.Label();
-            this.lbl_Usuario.Text = "Usuário :";
-            this.lbl_Usuario.Location = new Point(20, 50);
-            this.Controls.Add(lbl_Usuario);
+            this.lbl_Email = new Library.Label();
+            this.lbl_Email.Text = "Usuário :";
+            this.lbl_Email.Location = new Point(20, 50);
+            this.Controls.Add(lbl_Email);
 
-            this.txt_Usuario = new Library.TextBox();
-            this.txt_Usuario.Location = new Point(150, 50);
-            this.Controls.Add(txt_Usuario);
+            this.txt_Email = new Library.TextBox();
+            this.txt_Email.Location = new Point(150, 50);
+            this.Controls.Add(txt_Email);
 
             this.lbl_SenhaUsuario = new Library.Label();
             this.lbl_SenhaUsuario.Text = "Senha :";
@@ -75,23 +73,14 @@ namespace View
             this.txt_SenhaUsuario.Location = new Point(150, 80);
             this.Controls.Add(txt_SenhaUsuario);
 
-            this.lbl_EmailUsuario = new Library.Label();
-            this.lbl_EmailUsuario.Text = "Email :";
-            this.lbl_EmailUsuario.Location = new Point(20, 110);
-            this.Controls.Add(lbl_EmailUsuario);
+            this.lbl_Descricao = new Library.Label();
+            this.lbl_Descricao.Text = "Descrição :";
+            this.lbl_Descricao.Location = new Point(20, 110);
+            this.Controls.Add(lbl_Descricao);
 
-            this.txt_EmailUsuario = new Library.TextBox();
-            this.txt_EmailUsuario.Location = new Point(150, 50);
-            this.Controls.Add(txt_EmailUsuario);
-
-            this.lbl_DescricaoUsuario = new Library.Label();
-            this.lbl_DescricaoUsuario.Text = "Descrição :";
-            this.lbl_DescricaoUsuario.Location = new Point(20, 110);
-            this.Controls.Add(lbl_DescricaoUsuario);
-
-            this.txt_DescricaoUsuario = new Library.TextBox();
-            this.txt_DescricaoUsuario.Location = new Point(150, 50);
-            this.Controls.Add(txt_DescricaoUsuario);
+            this.txt_Descricao = new Library.TextBox();
+            this.txt_Descricao.Location = new Point(150, 50);
+            this.Controls.Add(txt_Descricao);
 
             this.lbl_CidadeUsuario = new Library.Label();
             this.lbl_CidadeUsuario.Text = "Confirmar Senha :";

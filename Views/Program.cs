@@ -115,22 +115,22 @@ namespace View
             }
 
             //Método de validação do Usuário (2 strings - Login e Senha)
-            private bool ValidaUsuario(string LoginUsuario, string SenhaUsuario)
+            private bool ValidaUsuario(string Email, string SenhaUsuario)
             {
                 // Acesso ao método Campos Preenchidos Obrigatorio
-                bool resultado = Controllers.UsuarioController.CampoLogin(LoginUsuario, SenhaUsuario);
+                bool resultado = Controllers.Usuario.CampoLogin(Email, SenhaUsuario);
                 if (resultado)
                 {
                     // Variável para teste de retorno
                     int retorno = -1;
                     // Instância da conexão
-                    MySqlConnection conn = new MySqlConnection(@"Server=localhost;User Id=root;Database=socialdev;");
+                    MySqlConnection conn = new MySqlConnection(@"Server=localhost;User Id=root;Database=SocialDev;");
                     // Comando sql COUNT para buscar Login e Senha
-                    string comando = "SELECT COUNT(*) FROM usuarios WHERE LoginUsuario=@LoginUsuario AND SenhaUsuario=@SenhaUsuario";
+                    string comando = "SELECT COUNT(*) FROM usuario WHERE Email=@Email AND SenhaUsuario=@SenhaUsuario";
                     // Instância do comando
                     MySqlCommand cmd = new MySqlCommand(comando, conn);
                     // Preenchimento dos parâmetros
-                    cmd.Parameters.AddWithValue("@LoginUsuario", LoginUsuario);
+                    cmd.Parameters.AddWithValue("@Email", Email);
                     cmd.Parameters.AddWithValue("@SenhaUsuario", SenhaUsuario);
                     // Abre a conexão
                     conn.Open();
